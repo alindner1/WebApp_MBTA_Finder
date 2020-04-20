@@ -23,9 +23,9 @@ def find():
     # aka. it displays the form when the method is 'GET'; it displays the results when
     # the method is 'POST' and the data is correctly processed.
     if request.method == "POST":
-        requestedplace = str(request.form["Place, City, State"])
+        requestedplace = str(request.form["place"])
         requestedstop = find_stop_near(requestedplace)
-        if stop:
+        if requestedstop:
             return render_template(
                 "found.html", requestedstop=requestedstop, requestedplace=requestedplace
             )
