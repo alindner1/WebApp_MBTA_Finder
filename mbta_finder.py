@@ -36,7 +36,6 @@ def get_lat_long(place_name):
     url = f'{MAPQUEST_BASE_URL}?key={MAPQUEST_API_KEY}&location={place}'
     #print(url) # uncomment to test the url in browser
     place_json = get_json(url)
-    #pprint((place_json['results'][0]['locations'][0]['latLng']['lat']))
     lat = place_json['results'][0]['locations'][0]['latLng']['lat'] # modify this so you get the correct latitude
     lon = place_json['results'][0]['locations'][0]['latLng']['lng'] # modify this so you get the correct longitude
   
